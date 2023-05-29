@@ -1,4 +1,4 @@
-// TODO: Add icon and splash screen
+// TODO: Add icon and splash screen for Android
 
 import {Button, useColorScheme} from 'react-native';
 import {
