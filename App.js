@@ -1,6 +1,5 @@
 // TODO: Add icon and splash screen
 
-// import { StatusBar } from "expo-status-bar";
 import {Button, useColorScheme} from 'react-native';
 import {
   NavigationContainer,
@@ -39,16 +38,15 @@ export default function App() {
           options={({navigation}) => ({
             headerRight: () => (
               <Button
-                onPress={() => navigation.navigate('Instructions')}
+                onPress={() => navigation.navigate('Help')}
                 title="?"
                 color="gray"
               />
             ),
           })}
         />
-        <Stack.Screen name="Instructions" component={HelpScreen} />
+        <Stack.Screen name="Help" component={HelpScreen} />
       </Stack.Navigator>
-      {/* <StatusBar style="auto" /> */}
     </NavigationContainer>
   );
 }

@@ -10,11 +10,11 @@ NumberInput: A custom text input component that only allows numbers
  * It allows additional styling to be passed in that is applied to the TextInput component
  */
 
-import React, { useState, useEffect } from "react";
-import { TextInput, Platform, StyleSheet } from "react-native";
+import React, {useState, useEffect} from 'react';
+import {TextInput, Platform, StyleSheet} from 'react-native';
 
-const NumberInput = ({ maxDecimalDigits, style, onValueChange, ...props }) => {
-  const [text, setText] = useState("");
+const NumberInput = ({maxDecimalDigits, style, onValueChange, ...props}) => {
+  const [text, setText] = useState('');
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -27,12 +27,12 @@ const NumberInput = ({ maxDecimalDigits, style, onValueChange, ...props }) => {
     };
   }, [error]);
 
-  const handleTextChange = (inputText) => {
+  const handleTextChange = inputText => {
     // Validate the input for numeric characters, negative sign, and decimal point
     const regex = new RegExp(
-      `^-?[0-9]*\\.?[0-9]{0,${maxDecimalDigits || ""}}$`
+      `^-?[0-9]*\\.?[0-9]{0,${maxDecimalDigits || ''}}$`,
     );
-    if (regex.test(inputText) || inputText === "" || inputText === "-") {
+    if (regex.test(inputText) || inputText === '' || inputText === '-') {
       setText(inputText);
       setError(false);
       if (onValueChange) {
@@ -48,7 +48,7 @@ const NumberInput = ({ maxDecimalDigits, style, onValueChange, ...props }) => {
       value={text}
       onChangeText={handleTextChange}
       keyboardType={
-        Platform.OS === "ios" ? "numbers-and-punctuation" : "numeric"
+        Platform.OS === 'ios' ? 'numbers-and-punctuation' : 'numeric'
       }
       style={[styles.input, style, error && styles.error]}
       {...props}
@@ -59,13 +59,13 @@ const NumberInput = ({ maxDecimalDigits, style, onValueChange, ...props }) => {
 const styles = StyleSheet.create({
   input: {
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: 'black',
     padding: 10,
     borderRadius: 5, // smooth edges
-    color: "black",
+    color: 'black',
   },
   error: {
-    borderColor: "red",
+    borderColor: 'red',
   },
 });
 
