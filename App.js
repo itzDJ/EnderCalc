@@ -1,4 +1,6 @@
-// TODO: Add icon and splash screen for Android
+// TODO Speedup app boot time and keep splash screen until app loads
+// TODO Add Minecraft font
+// TODO Add icon and splash screen for Android
 
 import {Button, useColorScheme} from 'react-native';
 import {
@@ -7,33 +9,20 @@ import {
   DarkTheme,
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
 import HomeScreen from './screens/HomeScreen';
 import HelpScreen from './screens/HelpScreen';
 
-const myTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: 'white',
-    text: 'black',
-  },
-};
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
   const colorScheme = useColorScheme();
 
   return (
-    <NavigationContainer theme={colorScheme === 'dark' ? DarkTheme : myTheme}>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
-          },
-        }}>
+    <NavigationContainer
+      theme={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
+      <Stack.Navigator>
         <Stack.Screen
-          name="Minecraft Stronghold Calculator"
+          name="EnderCalc"
           component={HomeScreen}
           options={({navigation}) => ({
             headerRight: () => (

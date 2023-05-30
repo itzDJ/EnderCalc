@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {
   Text,
   SafeAreaView,
@@ -8,7 +8,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import {useTheme} from '@react-navigation/native';
-
 import NumberInput from '../NumberInput';
 import calculate from '../formula';
 
@@ -16,12 +15,6 @@ export default function HomeScreen() {
   const {colors} = useTheme();
 
   const styles = StyleSheet.create({
-    background: {
-      flex: 1,
-      backgroundColor: colors.background,
-      justifyContent: 'space-evenly',
-      flexDirection: 'column',
-    },
     text: {
       fontSize: 20,
       fontWeight: 'bold',
@@ -47,7 +40,7 @@ export default function HomeScreen() {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <SafeAreaView style={styles.background}>
+      <SafeAreaView style={{flex: 1}}>
         <View
           style={{
             flex: 1,
@@ -73,7 +66,7 @@ export default function HomeScreen() {
               style={styles.textBox}
               maxLength={7}
               maxDecimalDigits={1}
-              placeholder="f1"
+              placeholder="θ1"
               onValueChange={set_f1}
             />
           </View>
@@ -82,7 +75,7 @@ export default function HomeScreen() {
             <Text />
             <Text style={styles.text}>X</Text>
             <Text style={styles.text}>Z</Text>
-            <Text style={styles.text}>F</Text>
+            <Text style={styles.text}>θ</Text>
           </View>
 
           <View style={{flex: 2, padding: 10, justifyContent: 'space-evenly'}}>
@@ -105,7 +98,7 @@ export default function HomeScreen() {
               style={styles.textBox}
               maxLength={7}
               maxDecimalDigits={1}
-              placeholder="f2"
+              placeholder="θ2"
               onValueChange={set_f2}
             />
           </View>
@@ -116,7 +109,6 @@ export default function HomeScreen() {
             flex: 1,
             justifyContent: 'flex-end',
             paddingBottom: 10,
-            alignItems: 'center',
           }}>
           <Text style={styles.text}>{checkBoxes(x1, z1, f1, x2, z2, f2)}</Text>
         </View>
@@ -143,5 +135,5 @@ function checkBoxes(x1, z1, f1, x2, z2, f2) {
   ) {
     return 'Stronghold is around ' + calculate(x1, z1, f1, x2, z2, f2);
   }
-  return 'Enter coordinates to both throws';
+  return 'To approximate the location of the stronghold, enter coordinates to both throws.';
 }

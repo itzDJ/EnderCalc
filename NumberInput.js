@@ -10,7 +10,7 @@ NumberInput: A custom text input component that only allows numbers
  * It allows additional styling to be passed in that is applied to the TextInput component
  */
 
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 import {TextInput, Platform, StyleSheet} from 'react-native';
 
 const NumberInput = ({maxDecimalDigits, style, onValueChange, ...props}) => {
