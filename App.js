@@ -1,5 +1,4 @@
 // TODO Turn the numbers on the home page into subscripts
-// TODO Speedup app boot time and keep splash screen until app loads
 // TODO Add Minecraft font
 // TODO For Android: Add app icon, add splash screen, and keep device in portrait mode
 
