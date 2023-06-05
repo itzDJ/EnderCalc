@@ -25,7 +25,7 @@ export default function HelpScreen() {
         <Text style={styles.title}>How it works</Text>
         <Text style={styles.text}>
           {'\t'}When an eye of ender is thrown, it essentially creates a line
-          pointing to the stronghold. When two eyes of ender of thrown with
+          pointing to the stronghold. When two eyes of ender are thrown with
           decent space between them (at least 100 blocks), the lines will
           intersect. This app finds the intersection of the two lines which is
           approximately the location of the stronghold.
@@ -38,7 +38,7 @@ export default function HelpScreen() {
         </Text>
         <Text style={styles.text}>{'\u2022'} Throw an eye of ender</Text>
         <Text style={styles.text}>
-          {'\u2022'} When the eye stops moving, place the center of your
+          {'\u2022'} When the eye stops moving, place the center of the
           crosshair on the center of the eye
         </Text>
 
@@ -47,8 +47,8 @@ export default function HelpScreen() {
         </Text>
 
         <Text style={styles.text}>
-          {'\u2022'} Enter the angle of the eye (the first number on facing
-          direction)
+          {'\u2022'} Enter the angle of the eye (the first number on the facing
+          direction line)
         </Text>
 
         <Text style={styles.text}>
