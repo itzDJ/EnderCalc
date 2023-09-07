@@ -32,6 +32,22 @@ export default function App() {
                 color="gray"
               />
             ),
+            headerLeft: () => (
+              // TODO Add a camera icon instead of the word "Scan"
+              /*
+                * TODO Add a feature to use OCR to scan the f3 menu for coords:
+                * Click the "Scan" button
+                * The onPress should call a function (from another file) that does all of the work
+                * Scans the f3 menu for coords (instead of taking a picture of the screen)
+                * Returns the coords to the app
+                * The app then does the math and displays the results
+                * */
+              <Button
+                onPress={() => console.log('This will open the camera to scan f3 for coords')}
+                title="Scan"
+                color="gray"
+              />
+            ),
           })}
         />
         <Stack.Screen name="Help" component={HelpScreen} />
